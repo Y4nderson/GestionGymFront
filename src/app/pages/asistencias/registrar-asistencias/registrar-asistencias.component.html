@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Asistencia</title>
+    <style>
+        /* Estilos mínimos iniciales */
+        /* Estilos mejorados para registro de asistencia */
+body {
+    font-family: 'Roboto', sans-serif; /* Tipografía moderna */
+    margin: 0;
+    padding: 0;
+    background-color: #e9ecef; /* Fondo neutro */
+}
+
+.auth-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: url('images/background/gym8.jpg') no-repeat center center;
+    background-size: cover;
+    position: relative;
+}
+
+.auth-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6); /* Más opacidad para mayor contraste */
+}
+
+.auth-card {
+    background: rgba(255, 255, 255, 0.95); /* Fondo blanco con transparencia */
+    padding: 2rem;
+    border-radius: 12px; /* Bordes más suaves */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3); /* Sombra más definida */
+    width: 90%;
+    max-width: 420px; /* Ajuste de ancho */
+    z-index: 1;
+}
+
+.form-title {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: #212529; /* Color más oscuro para texto */
+    font-weight: bold; /* Resaltar título */
+    font-size: 1.8rem; /* Tamaño ligeramente mayor */
+}
+
+.form-input {
+    width: 100%;
+    padding: 14px; /* Más espacio para comodidad */
+    margin-bottom: 1.2rem;
+    border: 1px solid #ccc; /* Bordes más suaves */
+    border-radius: 6px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+.form-input:focus {
+    border-color: #3498db; /* Color azul en foco */
+    outline: none;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 14px;
+    background-color: #007bff; /* Azul más elegante */
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.submit-btn:hover {
+    background-color: #0056b3; /* Azul más intenso */
+    transform: scale(1.05); /* Efecto de botón al pasar */
+}
+
+    </style>
+</head>
+<body>
+    <!-- Contenedor principal -->
+    <div class="auth-container">
+        <div class="auth-card">
+            <form [formGroup]="registroGroup" (ngSubmit)="RegistrarAsistencia()">
+                <h1 class="form-title">Ingrese su Cédula</h1>
+                <input class="form-input" class="form-control" 
+                formControlName="cedula" type="text" name="cedula" required 
+                       placeholder="Ejemplo: 604860234">
+                <button class="submit-btn"  type="submit">
+                    Registrar Asistencia
+                </button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,146 @@
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+<div class="card borde-azulll">
+    <div class="card-body fondo-personalizado">
+        <h5 class="card-title">Mantenimiento Clientes - FitYan</h5><br><br>
+        <button class="btn btn-info btn-rounded" (click)="RegistrarCliente()">Nuevo Cliente</button>
+    </div>
+</div>
+
+
+             
+<div class="row"> 
+    <!-- Tarjeta: Total Clientes -->
+    <div class="col-12 col-sm-6 col-md-3">
+        <div class="card borde-azul">
+            <div class="card-body fondo-personalizado">
+                <h5 class="card-title">Total Clientes</h5><br>
+                <h3 class="card-subtitle texttt">{{ clientesEstadisticas.totalClientes }}</h3>
+            </div>
+        </div>
+    </div>
+
+    <!-- Tarjeta: Clientes Activos -->
+    <div class="col-12 col-sm-6 col-md-3">
+        <div class="card borde-azul">
+            <div class="card-body fondo-personalizado">
+                <h5 class="card-title">Clientes Activos</h5><br>
+                <h3 class="card-subtitle texttt">{{ clientesEstadisticas.clientesActivos }}</h3>
+            </div>
+        </div>
+    </div>
+
+    <!-- Tarjeta: Clientes Inactivos -->
+    <div class="col-12 col-sm-6 col-md-3">
+        <div class="card borde-azul ">
+            <div class="card-body fondo-personalizado">
+                <h5 class="card-title">Clientes Inactivos</h5><br>
+                <h3 class="card-subtitle texttt">{{ clientesEstadisticas.clientesInactivos }}</h3>
+            </div>
+        </div>
+    </div>
+
+    <!-- Tarjeta: Próximos a Vencer -->
+    <div class="col-12 col-sm-6 col-md-3">
+        <div class="card borde-azul ">
+            <div class="card-body fondo-personalizado">
+                <h5 class="card-title">Vencidos/Por Vencer</h5><br>
+                <h3 class="card-subtitle texttt">{{ clientesEstadisticas.clientesProximosVencer }}</h3>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Barra de filtros -->
+<div class="row animated fadeIn fast">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body header-container">
+
+                <input type="text" class="form-control colorrs" placeholder="Buscar por cédula, nombre, teléfono..." #inputBusqueda>
+                <button class="btn cambiar-coloor" (click)="Buscar(inputBusqueda.value)"><i class="fa-solid fa-magnifying-glass"></i></button>
+                
+              
+
+
+                <div class="btn-group d-flex gap-2">
+                    
+                    <button class="btn cambiar-coloor" (click)="mostrarCliente()">Todos</button>
+                    <button class="btn cambiar-coloor" (click)="mostrarClienteActivos()">Activos</button>
+                    <button class="btn cambiar-coloor" (click)="mostrarClienteInactivos()">Inactivos</button>
+                    <button class="btn cambiar-coloor" (click)="mostrarClienteVencer()">Vencidos y Próximos a Vencer</button>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+
+
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
+                
+                <h4 class="card-title">Clientes</h4>
+                <br>
+                <h6 class="card-subtitle">Lista de Clientes</h6>
+                <div class="table-responsive">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Nombre completo</th>
+                                <th>Cédula</th>
+                                <th>Teléfono</th>
+                                <th>Correo</th>
+                                <th>Fecha de Matrícula</th>
+                                <th>Fecha de Vencimiento</th>
+                                <th>Tiempo Restante</th>
+                                <th>Estado Membresía</th>
+                                <th class="text-nowrap">Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let cliente of clientes | paginate: {itemsPerPage:7, currentPage: page}" [ngClass]="{
+                                'estado-inactivos': cliente.estadoMembresia === 'Inactivo',
+                                'estado-por-vencer': cliente.estadoMembresia === 'Por vencer',
+                                'estado-vencida': cliente.estadoMembresia === 'Vencida'
+                              }">
+                            
+                                <td class="bigger">{{cliente.nombreCompleto}}</td>
+                                <td class="bigger">{{cliente.cedula}}</td>
+                                <td class="bigger">{{cliente.telefono}}</td>
+                                <td class="bigger">{{cliente.correo}}</td>
+                                <td class="bigger">{{cliente.fechaDeInscripcion | date:'dd/MM/yyyy HH:mm'}}</td>
+                                <td class="bigger">{{cliente.fechaDeVencimiento | date:'dd/MM/yyyy HH:mm'}}</td>
+                                <td class="bigger">{{cliente.tiempoRestante}}</td>
+                                <td class="bigger"> {{cliente.estadoMembresia}}</td>
+                                <td class="text-nowrap">
+                                    <a href="#" class="btn-accion editar" data-toggle="tooltip" data-original-title="Editar">
+                                        <i class="fa-solid fa-pen"></i> 
+                                    </a>
+                                    <a type="button" (click)="eliminarCliente(cliente.clienteID)" class="btn-accion borrar" title="Eliminar">
+                                        <i class="fa-solid fa-trash"></i> 
+                                    </a>
+                                    <a type="button"  (click)="renovarMembresia(cliente.cedula)" class="btn-accion borrar" title="Eliminar">
+                                        <i class="fa-solid fa-sync-alt"></i>
+                                    </a>
+                                    
+                                     
+
+                                </td>
+                                
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <pagination-controls class="my-pagination" (pageChange)="page = $event"   previousLabel="Anterior"  nextLabel="Siguiente"></pagination-controls>
+
+            </div>
+        </div>
+    </div>
+</div>

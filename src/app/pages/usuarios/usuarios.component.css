@@ -1,0 +1,523 @@
+/* Contenedor principal */
+
+.btn-group {
+    display: flex;
+    gap: 0.5rem; /* Ajusta el espacio entre botones */
+}
+
+.cambiar-coloor {
+    padding: 0.5rem 1.5rem;
+    border-radius: 25px;
+    background-color: #2196F3; /* Rojo por defecto */
+    color: white; /* Texto en blanco */
+    border: 1px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.cambiar-coloor:hover {
+    background-color: white; /* Cambia a blanco en hover */
+    color: #2196F3; /* Texto en rojo */
+    box-shadow: 0 4px 8px rgba(255, 75, 75, 0.5);
+    border: 1px solid #07b340;
+    transform: translateY(-2px);
+}
+
+
+.card {
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    margin-bottom: 1.5rem;
+}
+ 
+/* Barra de búsqueda */
+.card:first-child {
+    margin-bottom: 2rem;
+}
+ 
+input.form-control {
+    border-radius: 25px;
+    padding: 1rem 1.5rem;
+    border: 1px solid #e0e0e0;
+    transition: all 0.3s ease;
+}
+ 
+input.form-control:focus {
+    box-shadow: 0 0 8px rgba(33,150,243,0.3);
+    border-color: #2196F3;
+}
+ 
+/* Encabezado con botón */
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    gap: 1.5rem;
+}
+ 
+.titles-container {
+    flex-grow: 1;
+}
+ 
+.btn-info.btn-rounded {
+    background-color: #156b60;
+    color: white;
+    padding: 0.7rem 2rem;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    white-space: nowrap;
+}
+
+.btn-info.btn-rounded:hover {
+   
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px 07b340;
+}
+.btn.filter-btn,
+.btn-primary.mt-2 {
+    background-color: #156b60;
+    color: white;
+    border-radius: 8px;
+    padding: 0.5rem 1rem;
+    transition: all 0.3s ease;
+}
+
+.btn.filter-btn:hover,
+.btn-primary.mt-2:hover {
+    background-color: white;
+    transform: translateY(-2px);
+    box-shadow: 07b340;
+}
+
+ 
+/* Títulos */
+.card-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-bottom: 0.2rem;
+}
+ 
+.card-subtitle {
+    font-size: 0.9rem;
+    color: #7f8c8d;
+    margin-bottom: 0;
+}
+ 
+hr {
+    margin-top: 1.5rem;
+    margin-bottom: 2rem;
+    border-color: rgba(0,0,0,0.1);
+}
+ 
+/* Tabla */
+.table {
+    border-collapse: separate;
+    border-spacing: 0;
+    margin: 1.5rem 0;
+    width: 100%;
+}
+ 
+.table thead th {
+    background-color: #156b60;
+    color: white;
+    padding: 1rem;
+    border: none;
+    font-weight: 500;
+    position: sticky;
+    top: 0;
+}
+ 
+.table tbody td {
+    padding: 1rem;
+    vertical-align: middle;
+    border-bottom: 1px solid #f0f0f0;
+    background-color: #ffffff;
+    transition: all 0.2s ease;
+    position: relative;
+}
+ 
+/* Filas intercaladas */
+.table tbody tr:nth-child(even) td {
+    background-color: #f8fbfe;
+}
+ 
+/* Efecto hover para filas */
+.table tbody tr:hover td {
+    background-color: #f1f8ff;
+}
+ 
+.table tbody tr {
+    transition: all 0.3s ease;
+    position: relative;
+}
+ 
+.table tbody tr:hover {
+    transform: translateX(5px);
+    box-shadow: 0 2px 8px rgba(33, 150, 243, 0.1);
+}
+ 
+.table tbody tr:hover td:first-child {
+    border-left: 4px solid #156b60;
+}
+ 
+/* Efecto para celdas individuales al hover */
+.table tbody td:hover::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(33, 150, 243, 0.05);
+    pointer-events: none;  /* Asegura que los clics pasen al elemento de debajo */
+}
+ 
+/* Acciones */
+.text-nowrap a {
+    padding: 0.5rem;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    margin: 0 0.3rem;
+}
+ 
+.text-nowrap a:hover {
+    background-color: rgba(33,150,243,0.1);
+}
+ 
+.fa-pencil {
+    color: #07b340;
+}
+ 
+.fa-solid.fa-trash {
+    color: #e74c3c;
+}
+ 
+.fa-solid.fa-trash {
+    
+    color: e74c3c(233, 62, 62);
+}
+.fa-solid.fa-magnifying-glass {
+    
+    color: white;
+}
+/* Paginación */
+.d-flex {
+    justify-content: flex-end;
+    gap: 0.8rem;
+    padding: 1rem 0;
+}
+button.filter-btn{
+    color: #07b340;
+}
+button:hover .fa-solid.trash {
+    color: #07b340;
+    
+    
+    
+}
+
+button:hover .fa-solid.fa-magnifying-glass {
+    color: #07b340;
+    
+    
+    
+}
+.cambiar-coloor {
+    background-color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 0.5rem 1.5rem;
+    transition: all 0.3s ease;
+}
+ 
+.btn-secondary:hover {
+    background-color: #156b60;
+    transform: translateY(-1px);
+}
+ 
+/* Responsive */
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 1rem;
+    }
+   
+    .btn-info.btn-rounded {
+        width: 100%;
+        justify-content: center;
+        margin-left: 0;
+        order: -1;
+    }
+   
+    .titles-container {
+        text-align: center;
+    }
+   
+    .card-title {
+        font-size: 1.3rem;
+    }
+   
+    .table-responsive {
+        border: none;
+    }
+   
+    .table tbody tr:hover {
+        transform: none;
+    }
+   
+    .card-subtitle {
+        font-size: 0.8rem;
+    }
+}
+ 
+.cambiar-coloor {
+    padding: 0.5rem 1.5rem;
+    border-radius: 25px;
+    background-color: #156b60; /* Color neutro por defecto */
+    color: white; /* Texto oscuro por defecto */
+    border: 1px solid transparent; /* Sin borde visible */
+    transition: all 0.3s ease; /* Transición suave para cambios */
+}
+
+/* Estilo para toda la fila si el estado es "Por vencer" o "Vencido" */
+.fila-vencida {
+    background-color: #f8d7da !important; /* Fondo rojo claro */
+    color: #721c24 !important; /* Texto rojo oscuro */
+}
+
+/* Estilo solo para la celda de "Estado Membresía" si es "Activo" */
+.celda-activa {
+    background-color: #d4edda !important; /* Fondo verde claro */
+    color: #75724b !important; /* Texto verde oscuro */
+    font-weight: bold; /* Opcional: destacar el texto */
+    text-align: center; /* Centrar contenido */
+    border-radius: 4px; /* Opcional: esquinas redondeadas */
+}
+
+
+
+/* Elimina estilos para celdas individuales que puedan interferir */
+.table tbody td {
+    background-color: unset !important;
+}
+
+/* Filas intercaladas (sin interferir con clases dinámicas) */
+.table tbody tr:nth-child(even) {
+    background-color: unset !important;
+}
+
+/* Hover solo para filas sin clases dinámicas */
+.table tbody tr:hover td {
+    background-color: unset !important;
+}
+
+  /* Hover para todas las filas */
+  
+  
+
+.cambiar-coloor:hover {
+    background-color: white; /* Azul en hover */
+    color: #07b340; /* Texto blanco en hover */
+    box-shadow: 0 4px 8px rgba(33, 150, 243, 0.3); /* Efecto de sombra */
+    border: 1px solid #75724b; /* Borde azul más oscuro */
+}
+
+.bigger {
+    transition: transform 0.3s ease, font-size 0.3s ease;
+    position: relative; /* Mantiene el elemento en su lugar original */
+    z-index: 1; /* Asegura que el elemento esté sobre los demás cuando se expande */
+}
+ 
+.bigger:hover {
+    transform: scale(1.1); /* Aumenta el tamaño */
+    font-size: 1.1em; /* Aumenta ligeramente el tamaño del texto */
+    position: absolute; /* Lo saca del flujo normal para que crezca sobre los demás */
+    z-index: 10; /* Asegura que esté por encima de otros elementos */
+    cursor: pointer; /* Cambia el cursor a pointer */
+    background-color: white; /* Opcional: para que el texto siga siendo legible al crecer */
+    border: 1px solid #ccc; /* Opcional: bordes para destacar el campo */
+}
+ 
+.color-extra {
+    background-color: white; /* Puedes cambiar este color al que desees */
+}
+ 
+  /* Estilos para personalizar la tarjeta */
+  .fondo-personalizado {
+    background-color: white; /* Fondo claro para diferenciar la tarjeta */
+    padding: 20px;
+    border-radius: 8px;
+    border-color: #156b60;
+}
+
+.card.borde-azulll {
+    border: 2px solid #156b60;
+    font-size: larger;
+  
+}
+.form-control.colorrs{
+    border: 2px solid #156b60;
+    font-size: larger;
+}
+td {
+    background-color: #e6f2ff; /* Azul claro */
+    color: #003366; /* Texto azul oscuro */
+    padding: 10px; /* Espaciado interno */
+    border: 1px solid #156b60; /* Borde azul */
+}
+
+.card-subtitle.texttt{
+   color:  #156b60;
+   text-decoration: #156b60;
+   font-size: larger;
+   
+}
+ 
+.color-extra {
+    background-color: #ffffff; /* Fondo blanco para las secciones dentro de la tarjeta */
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 15px; /* Espacio entre los elementos */
+}
+ 
+/* Estilos para el input */
+.input-personalizado {
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 16px;
+}
+ 
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Contenedor de búsqueda */
+.search-container {
+    display: flex;
+    align-items: center;
+    border: 2px solid #3b82f6;
+    border-radius: 25px;
+    padding: 5px 10px;
+    width: 300px;
+}
+
+.search-container input {
+    border: none;
+    outline: none;
+    flex: 1;
+    padding: 8px;
+    font-size: 14px;
+}
+
+.search-container .search-btn {
+    background-color: #3b82f6;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    padding: 8px;
+    cursor: pointer;
+}
+
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Contenedor de búsqueda */
+.search-container {
+    display: flex;
+    align-items: center;
+    border: 2px solid #3b82f6;
+    border-radius: 25px;
+    padding: 5px 10px;
+    width: 300px;
+}
+
+.search-container input {
+    border: none;
+    outline: none;
+    flex: 1;
+    padding: 8px;
+    font-size: 14px;
+}
+
+.search-container .search-btn {
+    background-color: #3b82f6;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    padding: 8px;
+    cursor: pointer;
+}
+
+/* Contenedor del filtro */
+.filter-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.filter-container label {
+    font-size: 14px;
+}
+
+.filter-container input {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.filter-container .filter-btn {
+    background-color: #75724b;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.filter-container .filter-btn:hover {
+    background-color: white;
+}
+
+
+
+
+/* Estilos para los botones */
+.btn-personalizado {
+    background-color: white; /* Color primario */
+    border-color: #75724b;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+ 
+/* Hover en el botón para un efecto interactivo */
+.btn-personalizado:hover {
+    
+    border-color: #156b60;
+}
+ 
+/* Animación opcional para el fade-in */
+.animated {
+    animation-duration: 0.5s;
+}

@@ -1,0 +1,47 @@
+
+<body>
+    <!-- ============================================================== -->
+    <!-- Preloader - style you can find in spinners.css -->
+    <!-- ============================================================== -->
+    <div class="preloader">
+        <div class="loader">
+            <div class="loader__figure"></div>
+            <p class="loader__label">Admin Pro</p>
+        </div>
+    </div>
+    <!-- ============================================================== -->
+    <!-- Main wrapper - style you can find in pages.scss -->
+    <!-- ============================================================== -->
+    <section id="wrapper">
+        <div class="login-register" style="background-image:url(/images/background/gym8.jpg);">
+            <div class="login-box card">
+                <div class="card-body">
+                    <form #miFormulario="ngForm" (ngSubmit)="enviarFormulario(miFormulario)">
+                        <h3 class="box-title m-b-20">Ingrese su Cédula</h3>
+    
+                        <div class="form-group">
+                            <div class="col-xs-12">
+                                <input class="form-control" type="text" name="cedula" required 
+                                       #cedulaInput="ngModel" ngModel placeholder="Ejemplo: 604860234">
+                            </div>
+                        </div>
+    
+                        <div class="form-group text-center p-b-10">
+                            <div class="col-xs-12">
+                                <button class="btn btn-info btn-lg btn-block text-uppercase waves-effect waves-light" 
+                                        type="submit">
+                                    Registrar Asistencia
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- ============================================================== -->
+    <!-- End Wrapper -->
+    <!-- ============================================================== -->
+
+</body>
